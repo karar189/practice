@@ -6,11 +6,12 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const submitHandler = () => {
+  const submitHandler = (event) => {
+    event.preventDefault();
     console.log(name);
     console.log(email);
-    // setName(name);
-    // setEmail(email);
+    setName(name);
+    setEmail(email);
   };
 
   return (
@@ -30,6 +31,7 @@ const Form = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        <br />
         <br />
         <a onClick={submitHandler}>Submit</a>
       </form>
