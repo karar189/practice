@@ -6,7 +6,7 @@ const DisplayCard = (props) => {
       <br />
       My Name is : {props.name}
       <br />
-      My Email is : {props.email}
+      My Email ID is : {props.email}
     </div>
   );
 };
