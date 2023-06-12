@@ -15,24 +15,21 @@ const Form = () => {
     setSubmitted(true);
   };
 
-  const final = {
-    name: name,
-    email: email,
-  };
-
   return (
     <>
       <h2> Basic Form</h2>
       <form action="" onSubmit={submitHandler}>
         <input
           type="text"
+          label="name"
           placeholder="enter your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <br />
+        <br />
         <input
-          type="text"
+          type="email"
           placeholder="enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
