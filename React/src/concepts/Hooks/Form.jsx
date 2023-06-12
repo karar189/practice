@@ -5,19 +5,25 @@ import DisplayCard from "../../component/DisplayCard";
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(name);
     console.log(email);
-    setName(name);
-    setEmail(email);
+    alert("Form Submitted");
+    setSubmitted(true);
+  };
+
+  const final = {
+    name: name,
+    email: email,
   };
 
   return (
     <>
       <h2> Basic Form</h2>
-      <form action="">
+      <form action="" onSubmit={submitHandler}>
         <input
           type="text"
           placeholder="enter your name"
@@ -33,11 +39,11 @@ const Form = () => {
         />
         <br />
         <br />
-        <a onClick={submitHandler}>Submit</a>
+        <button>Submit</button>
       </form>
 
       {/* Now we will pass the name and state as props to child element display */}
-      <DisplayCard name={name} email={email} />
+      {submitted && <DisplayCard name={name} email={email} />}
     </>
   );
 };
